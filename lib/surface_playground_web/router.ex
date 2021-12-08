@@ -1,6 +1,8 @@
 defmodule SurfacePlaygroundWeb.Router do
   use SurfacePlaygroundWeb, :router
 
+  import Surface.Catalogue.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -18,6 +20,7 @@ defmodule SurfacePlaygroundWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/demo", Demo
   end
 
   # Other scopes may use custom stacks.
@@ -51,6 +54,13 @@ defmodule SurfacePlaygroundWeb.Router do
       pipe_through :browser
 
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+    end
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue("/catalogue")
     end
   end
 end
