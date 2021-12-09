@@ -34,7 +34,7 @@ defmodule SurfacePlaygroundWeb.TemperatureLive do
         {:noreply, assign(socket, celsius: celsius, fahrenheit: fahrenheit)}
 
       _error ->
-        socket = put_flash(socket, :error, "Celsius must be a number")
+        socket = put_flash(socket, :error, "Fahrenheit must be a number")
 
         {:noreply, socket}
     end
@@ -48,7 +48,7 @@ defmodule SurfacePlaygroundWeb.TemperatureLive do
         {:noreply, assign(socket, celsius: celsius, fahrenheit: fahrenheit)}
 
       _error ->
-        socket = put_flash(socket, :error, "Fahrenheit must be a number")
+        socket = put_flash(socket, :error, "Celsius must be a number")
 
         {:noreply, socket}
     end
