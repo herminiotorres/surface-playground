@@ -10,7 +10,7 @@ defmodule SurfacePlaygroundWeb.FlightBooker do
   alias Surface.Components.Form.ErrorTag
   alias Surface.Components.Form.Submit
 
-  data changeset, :struct, default: FlightTickets.new_booking_changes()
+  data changeset, :changeset, default: FlightTickets.new_booking_changes()
   data flight_types, :map, default: FlightTickets.flight_types()
 
   def render(assigns) do
@@ -23,15 +23,16 @@ defmodule SurfacePlaygroundWeb.FlightBooker do
 
     <Field name={:departure}>
       <TextInput class={date_class(@changeset, :departure)} />
-      <ErrorTag />
+      <ErrorTag class="invalid-feedback" />
     </Field>
 
     <Field name={:return}>
       <TextInput class={date_class(@changeset, :return)} opts={id: "return-date", disabled: one_way_flight?(@changeset)} />
       <ErrorTag />
     </Field>
+
     <Field name={:date_mismatch}>
-      <ErrorTag />
+      <ErrorTag class="invalid-feedback" />
     </Field>
 
     <Submit label="Book" opts={id: "book-flight", disabled: !@changeset.valid?} />
