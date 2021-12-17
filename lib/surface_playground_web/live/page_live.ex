@@ -11,7 +11,7 @@ defmodule SurfacePlaygroundWeb.PageLive do
   def render(assigns) do
     ~F"""
     <section class="phx-hero">
-      <h1>Welcome to Surface Playground</h1>
+      <h1>Welcome to <a href="https://github.com/herminiotorres/surface_playground" target="_blank">Surface Playground</a></h1>
       <p>A place where all can learn about surface. I reimplemented a few others liveview examples.</p>
     </section>
 
