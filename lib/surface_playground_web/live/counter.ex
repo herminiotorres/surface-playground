@@ -15,6 +15,20 @@ defmodule SurfacePlaygroundWeb.Counter do
           count
         </button>
       </p>
+
+      <hr>
+
+      <h3>References:</h3>
+      <div class="row">
+        <ul>
+          <li>
+            <a href="https://www.germanvelasco.com/blog/seven-guis-counter" target="_blank">German Velasco Blog Post</a>
+          </li>
+          <li>
+            <a href="https://github.com/germsvel/gui-examples" target="_blank">German Velasco Github Repository</a>
+          </li>
+        </ul>
+      </div>
     </div>
     """
   end

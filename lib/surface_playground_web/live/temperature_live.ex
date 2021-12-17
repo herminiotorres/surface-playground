@@ -26,6 +26,20 @@ defmodule SurfacePlaygroundWeb.TemperatureLive do
         </Field>
       </Form>
     </div>
+
+    <hr>
+
+    <h3>References:</h3>
+    <div class="row">
+      <ul>
+        <li>
+          <a href="https://www.germanvelasco.com/blog/seven-guis-temperature" target="_blank">German Velasco Blog Post</a>
+        </li>
+        <li>
+          <a href="https://github.com/germsvel/gui-examples" target="_blank">German Velasco Github Repository</a>
+        </li>
+      </ul>
+    </div>
     """
   end
 

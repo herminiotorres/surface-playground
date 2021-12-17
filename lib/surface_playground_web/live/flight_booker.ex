@@ -39,6 +39,20 @@ defmodule SurfacePlaygroundWeb.FlightBooker do
       <Submit label="Book" opts={id: "book-flight", disabled: !@changeset.valid?} />
       </Form>
     </div>
+
+    <hr>
+
+    <h3>References:</h3>
+    <div class="row">
+      <ul>
+        <li>
+          <a href="https://www.germanvelasco.com/blog/seven-guis-flight-booker" target="_blank">German Velasco Blog Post</a>
+        </li>
+        <li>
+          <a href="https://github.com/germsvel/gui-examples" target="_blank">German Velasco Github Repository</a>
+        </li>
+      </ul>
+    </div>
     """
   end
 
