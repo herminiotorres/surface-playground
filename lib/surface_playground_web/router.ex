@@ -19,7 +19,7 @@ defmodule SurfacePlaygroundWeb.Router do
   scope "/", SurfacePlaygroundWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", PageLive, :index
 
     scope "/7gui" do
       live "/demo", Demo
