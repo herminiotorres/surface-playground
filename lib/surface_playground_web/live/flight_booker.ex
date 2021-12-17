@@ -15,28 +15,30 @@ defmodule SurfacePlaygroundWeb.FlightBooker do
 
   def render(assigns) do
     ~F"""
-    <h1>Book Flight</h1>
-    <Form for={@changeset} submit="book" change="validate" opts={id: "flight-booker"}>
-    <Field name={:flight_type}>
-      <Select options={@flight_types} opts={id: "flight-type"} />
-    </Field>
+    <div class="container">
+      <h1>Book Flight</h1>
+      <Form for={@changeset} submit="book" change="validate" opts={id: "flight-booker"}>
+      <Field name={:flight_type}>
+        <Select options={@flight_types} opts={id: "flight-type"} />
+      </Field>
 
-    <Field name={:departure}>
-      <TextInput class={date_class(@changeset, :departure)} />
-      <ErrorTag class="invalid-feedback" />
-    </Field>
+      <Field name={:departure}>
+        <TextInput class={date_class(@changeset, :departure)} />
+        <ErrorTag class="invalid-feedback" />
+      </Field>
 
-    <Field name={:return}>
-      <TextInput class={date_class(@changeset, :return)} opts={id: "return-date", disabled: one_way_flight?(@changeset)} />
-      <ErrorTag />
-    </Field>
+      <Field name={:return}>
+        <TextInput class={date_class(@changeset, :return)} opts={id: "return-date", disabled: one_way_flight?(@changeset)} />
+        <ErrorTag />
+      </Field>
 
-    <Field name={:date_mismatch}>
-      <ErrorTag class="invalid-feedback" />
-    </Field>
+      <Field name={:date_mismatch}>
+        <ErrorTag class="invalid-feedback" />
+      </Field>
 
-    <Submit label="Book" opts={id: "book-flight", disabled: !@changeset.valid?} />
-    </Form>
+      <Submit label="Book" opts={id: "book-flight", disabled: !@changeset.valid?} />
+      </Form>
+    </div>
     """
   end
 

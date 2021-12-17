@@ -15,17 +15,16 @@ defmodule SurfacePlaygroundWeb.TemperatureLive do
     <div class="container">
       <h1>Temperature Converter</h1>
 
-    <Form for={:temperature} change="temperature">
-      <Field name="celsius">
-        <Label/>
-        <TextInput value={@celsius} />
-      </Field>
-      <Field name="fahrenheit">
-        <Label>Fahrenheit</Label>
-        <TextInput value={@fahrenheit} />
-      </Field>
-    </Form>
-
+      <Form for={:temperature} change="temperature">
+        <Field name="celsius">
+          <Label/>
+          <TextInput value={@celsius} />
+        </Field>
+        <Field name="fahrenheit">
+          <Label>Fahrenheit</Label>
+          <TextInput value={@fahrenheit} />
+        </Field>
+      </Form>
     </div>
     """
   end
