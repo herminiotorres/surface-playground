@@ -1,5 +1,7 @@
 defmodule SurfacePlaygroundWeb.Counter do
-  use Surface.LiveView
+  use SurfacePlaygroundWeb, :surface_view
+
+  alias SurfacePlaygroundWeb.Components.Button
 
   data count, :integer, default: 0
 
@@ -11,9 +13,7 @@ defmodule SurfacePlaygroundWeb.Counter do
         {@count}
       </p>
       <p>
-        <button class="button if-info" :on-click="increment">
-          count
-        </button>
+        <Button label="count" class="button" click="increment" opts={type: "button"} />
       </p>
 
       <hr>

@@ -1,5 +1,5 @@
 defmodule SurfacePlaygroundWeb.Demo do
-  use Surface.LiveView
+  use SurfacePlaygroundWeb, :surface_view
 
   alias SurfacePlaygroundWeb.Components.Hero
 

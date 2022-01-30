@@ -43,6 +43,15 @@ defmodule SurfacePlaygroundWeb do
     end
   end
 
+  def surface_view do
+    quote do
+      use Surface.LiveView,
+        layout: {SurfacePlaygroundWeb.LayoutView, "live.html"}
+
+      unquote(view_helpers())
+    end
+  end
+
   def live_view do
     quote do
       use Phoenix.LiveView,

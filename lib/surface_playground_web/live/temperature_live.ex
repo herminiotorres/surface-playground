@@ -1,6 +1,5 @@
 defmodule SurfacePlaygroundWeb.TemperatureLive do
-  use Surface.LiveView,
-    layout: {SurfacePlaygroundWeb.LayoutView, "live.html"}
+  use SurfacePlaygroundWeb, :surface_view
 
   alias Surface.Components.Form
   alias Surface.Components.Form.Field
