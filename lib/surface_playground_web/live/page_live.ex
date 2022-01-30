@@ -1,12 +1,7 @@
 defmodule SurfacePlaygroundWeb.PageLive do
-  use Surface.LiveView
+  use SurfacePlaygroundWeb, :surface_view
 
   alias Surface.Components.LiveRedirect
-  alias SurfacePlaygroundWeb.Router.Helpers, as: Routes
-
-  def mount(_, _, socket) do
-    {:ok, socket}
-  end
 
   def render(assigns) do
     ~F"""
@@ -22,22 +17,27 @@ defmodule SurfacePlaygroundWeb.PageLive do
           <ul>
             <li>
               <LiveRedirect to={Routes.live_path(@socket, SurfacePlaygroundWeb.Counter)}>
-              Implementing a Counter in LiveView
+                Implementing a Counter in LiveView
               </LiveRedirect>
             </li>
             <li>
               <LiveRedirect to={Routes.live_path(@socket, SurfacePlaygroundWeb.TemperatureLive)}>
-              Implementing a Temperature Converter in LiveView
+                Implementing a Temperature Converter in LiveView
               </LiveRedirect>
             </li>
             <li>
               <LiveRedirect to={Routes.live_path(@socket, SurfacePlaygroundWeb.FlightBooker)}>
-              Implementing a Flight Booker in LiveView
+                Implementing a Flight Booker in LiveView
               </LiveRedirect>
             </li>
             <li>
               <LiveRedirect to={Routes.live_path(@socket, SurfacePlaygroundWeb.Timer)}>
                 Implementing an Interactive Timer in LiveView
+              </LiveRedirect>
+            </li>
+            <li>
+              <LiveRedirect to={Routes.live_path(@socket, SurfacePlaygroundWeb.CRUDLive)}>
+                Implementing a CRUD App in LiveView
               </LiveRedirect>
             </li>
           </ul>

@@ -27,6 +27,7 @@ defmodule SurfacePlaygroundWeb.Router do
       live "/temperature", TemperatureLive
       live "/flight-booker", FlightBooker
       live "/timer", Timer
+      live "/crud", CRUDLive
     end
   end
 

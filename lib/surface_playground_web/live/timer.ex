@@ -1,11 +1,12 @@
 defmodule SurfacePlaygroundWeb.Timer do
-  use Surface.LiveView
+  use SurfacePlaygroundWeb, :surface_view
 
   alias Surface.Components.Form.Label
   alias Surface.Components.Form.Field
-  alias Surface.Components.Link.Button
   alias SurfacePlaygroundWeb.Components.Slider
   alias SurfacePlaygroundWeb.Components.Meter
+  alias SurfacePlaygroundWeb.Components.Button
+
 
   data elapsed_time, :integer, default: 0
   data duration, :integer, default: 50
@@ -30,7 +31,7 @@ defmodule SurfacePlaygroundWeb.Timer do
       </Field>
 
       <Field name="reset">
-        <Button to="#" method={nil} label="reset" id="reset" opts={type: "button", phx_click: "reset"} />
+        <Button label="reset" class="button" click="reset" opts={type: "button"} />
       </Field>
 
       <hr>
